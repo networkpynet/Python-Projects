@@ -1,17 +1,13 @@
 
 <SHOW COMMAND>
 Router#show version
-Router#show start
 Router#show run
-Router#show history
 Router#show clock
 Router#show users
-Router#show flash
 Router#show tech-support
 Router#show interfaces
 Router#show ip interface brief
 Router#copy run start
-Router#ping
 Router#reload
 
 <CONFIGURATION COMMAND>
@@ -22,23 +18,3 @@ Router(config-if)#speed auto
 Router(config-if)#duplex auto
 Router(config-if)#no shutdown
 Router(config-if)#exit
-
-<SECURE SSH/TELNET SETTING>
-Router(config)#enable password 1111
-Router(config)#no enable password
-Router(config)#enable secret 1111
-Router(config)#line console 0
-Router(config-line)#password 2222
-Router(config-line)#login
-Router(config-line)#exit
-Router(config)#line vty 0 4
-Router(config-line)#password 3333
-Router(config-line)#login
-Router(config-line)#exit
-Router(config)#service password-encryption
-Router(config)#banner motd # dont login #
-Router(config)#username xyz password 2222
-Router(config)#username xyz secret 2222
-Router(config)#username xyz privilege 15 password 2222
-Router(config)#username xyz privilege 15 secret 2222
-Router(config)#no ip domain-lookup
