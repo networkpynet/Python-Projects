@@ -4,4 +4,4 @@
 
 2) Find related information regarding the sandbox
 
-3) To download Netmiko, run "pip install netmiko" in terminal 
+3) To download Netmiko, run "pip install netmiko" in terminal session
