@@ -1,0 +1,20 @@
+import paramiko
+import time
+
+# connecting to paramiko library
+ssh_client = paramiko.SSHClient()
+print(type(ssh_client))
+
+# fingerprint known-hosts
+ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh_client.connect(hostname= "172.10.10.10", port='22', username='REMOVED', password='REMOVED', look_for_keys=False, allow_agent=False)
+
+shells = ssh_client.invoke_shell()
+shells.send("terminal length 0\n")
+shells.send("show version\n")
+shells.send("show ip int bri\n")
+time.sleep(1)
+
+output = shells.recv(10000)
+output = output.decode('utf-8')
+print(output)
